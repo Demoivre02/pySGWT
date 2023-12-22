@@ -47,10 +47,10 @@ def laplacian(A, laplacian_type='raw'):
         #   % nondiagonal entries
         #   ndL=-w./vec( sqrt(degrees(ni).*degrees(nj)) );
         #   L=sparse([ni;di],[nj;di],[ndL;dL],N,N);
-        print 'Not implemented'
+        print ('Not implemented')
     else:
         # TODO: Raise an exception
-        print "Don't know what to do"
+        print ("Don't know what to do")
 
     return L
 
@@ -133,7 +133,7 @@ def kernel(x, g_type='abspline', a=2, b=2, t1=1, t2=2):
     elif g_type == 'mh':
         g = x * np.exp(-x)
     else:
-        print 'unknown type'
+        print ('unknown type')
         #TODO Raise exception
 
     return g
@@ -235,7 +235,7 @@ def filter_design(l_max, N_scales, design_type='default', lp_factor=20,
         for scale in t:
             g.append(lambda x,s=scale: kernel(s * x, g_type='mh'))
     else:
-        print 'Unknown design type'
+        print ('Unknown design type')
         # TODO: Raise exception
         
     return (g, gp, t)
@@ -443,7 +443,7 @@ if __name__ == '__main__':
     plt.show()
 
     
-    print 'Done'
+    print ('Done')
     
     
 if __name__ == '__main__x':
